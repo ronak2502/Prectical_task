@@ -2,10 +2,20 @@ import os
 import shutil
 import time
 
-source_folder = "/home/hp/prectical_task/source_folder/"     #Path/Location of the source directory
-replica_folder = "/home/hp/prectical_task/replica_folder/"   #Path/Location of the replica folder
+
+# if folder is not exits then create a new folder
+if not os.path.exists('source_folder'):
+        source_folder =   os.makedirs('source_folder')
+
+if not os.path.exists('replica_folder'):
+        replica_folder = os.makedirs('replica_folder')
+
+current_directory = os.getcwd()
+source_folder = current_directory + "/source_folder/"     #Path/Location of the source directory
+replica_folder = current_directory + "/replica_folder/"   #Path/Location of the replica folder
 
 print("script is running...")
+
 
 def source_copy_to_replica():
     '''
